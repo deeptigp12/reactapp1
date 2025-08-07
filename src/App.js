@@ -1,23 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Gallery from './components/Gallery';
+import Dashboard from './components/Dashboard';
+import ContactUs from './components/ContactUs';
 
 function App() {
+  const appStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    backgroundColor: '#fffdf9',
+    fontFamily: 'sans-serif'
+  };
+
+  const contentStyle = {
+    flex: 1
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={appStyle}>
+      <BrowserRouter>
+        <Header />
+        <div style={contentStyle}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contactus" element={<ContactUs />} />
+          </Routes>
+        </div>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
