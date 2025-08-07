@@ -24,13 +24,19 @@ function Home() {
     padding: '0 10px',
   };
 
-  const navStyle = {
+  const navWrapperStyle = {
     display: 'flex',
     justifyContent: 'center',
+    marginTop: '30px',
+  };
+
+  const navStyle = {
+    display: 'flex',
     flexWrap: 'wrap',
     gap: '15px',
-    marginTop: '30px',
-    padding: '0 10px',
+    justifyContent: 'center',
+    maxWidth: '600px',
+    width: '90%',
   };
 
   const linkStyle = {
@@ -43,11 +49,11 @@ function Home() {
     borderRadius: '8px',
     transition: 'all 0.3s ease-in-out',
     backgroundColor: '#fff',
+    textAlign: 'center',
   };
 
   return (
     <div>
-      {/* Inline CSS for animation + responsive media query */}
       <style>
         {`
           @keyframes fadeIn {
@@ -61,17 +67,10 @@ function Home() {
           }
 
           @media (max-width: 600px) {
-            div {
-              font-size: 90%;
-            }
-
             nav a {
+              flex: 1 0 100%;
               font-size: 0.9rem !important;
-              padding: 6px 12px !important;
-            }
-
-            h1 {
-              font-size: 1.5rem !important;
+              padding: 10px !important;
             }
           }
         `}
@@ -85,13 +84,15 @@ function Home() {
         "Dogs leave paw prints on our hearts." 💛
       </p>
 
-      <nav style={navStyle}>
-        <a href="/dashboard" style={linkStyle}>Dashboard</a>
-        <a href="/login" style={linkStyle}>Login</a>
-        <a href="/signup" style={linkStyle}>Signup</a>
-        <a href="/gallery" style={linkStyle}>Gallery</a>
-        <a href="/contactus" style={linkStyle}>Contact Us</a>
-      </nav>
+      <div style={navWrapperStyle}>
+        <nav style={navStyle}>
+          <a href="/dashboard" style={linkStyle}>Dashboard</a>
+          <a href="/login" style={linkStyle}>Login</a>
+          <a href="/signup" style={linkStyle}>Signup</a>
+          <a href="/gallery" style={linkStyle}>Gallery</a>
+          <a href="/contactus" style={linkStyle}>Contact Us</a>
+        </nav>
+      </div>
     </div>
   );
 }
