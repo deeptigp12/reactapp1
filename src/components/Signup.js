@@ -1,41 +1,54 @@
 import React from 'react';
 
 function Signup() {
-  const formStyle = {
-    maxWidth: '450px',
-    margin: '50px auto',
-    padding: '25px',
+  const containerStyle = {
+    maxWidth: '500px',
+    margin: '80px auto',
+    padding: '30px',
     border: '1px solid #ddd',
-    borderRadius: '8px',
-    backgroundColor: '#fffaf5'
+    borderRadius: '10px',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+    fontFamily: 'sans-serif',
+    backgroundColor: '#fff',
   };
 
   const inputStyle = {
     width: '100%',
     padding: '10px',
-    marginBottom: '15px',
+    margin: '10px 0',
     borderRadius: '5px',
-    border: '1px solid #ccc'
+    border: '1px solid #ccc',
+    fontSize: '1rem',
   };
 
   const buttonStyle = {
-    padding: '10px 15px',
+    width: '100%',
+    padding: '10px',
     backgroundColor: '#d35400',
     color: '#fff',
     border: 'none',
     borderRadius: '5px',
+    fontSize: '1rem',
     cursor: 'pointer',
-    width: '100%'
+    marginTop: '10px',
+  };
+
+  const headingStyle = {
+    textAlign: 'center',
+    marginBottom: '20px',
+    color: '#d35400',
   };
 
   return (
-    <div style={formStyle}>
-      <h2 style={{ textAlign: 'center' }}>📝 Sign Up</h2>
-      <input type="text" placeholder="Name" style={inputStyle} />
-      <input type="email" placeholder="Email" style={inputStyle} />
-      <input type="password" placeholder="Create Password" style={inputStyle} />
-      <input type="password" placeholder="Confirm Password" style={inputStyle} />
-      <button style={buttonStyle}>Register</button>
+    <div style={containerStyle}>
+      <h2 style={headingStyle}>Sign Up</h2>
+      <form>
+        <input type="text" placeholder="Full Name" style={inputStyle} required />
+        <input type="email" placeholder="Email" style={inputStyle} required />
+        <input type="password" placeholder="Create Password" style={inputStyle} required />
+        <input type="password" placeholder="Confirm Password" style={inputStyle} required />
+        <button type="submit" style={buttonStyle}>Sign Up</button>
+      </form>
     </div>
   );
 }
