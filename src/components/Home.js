@@ -21,38 +21,58 @@ function Home() {
     fontStyle: 'italic',
     color: '#555',
     fontSize: '1.2rem',
+    padding: '0 10px',
   };
 
   const navStyle = {
     display: 'flex',
     justifyContent: 'center',
-    gap: '20px',
-    marginTop: '30px',
     flexWrap: 'wrap',
+    gap: '15px',
+    marginTop: '30px',
+    padding: '0 10px',
   };
 
   const linkStyle = {
     color: '#5a381e',
     textDecoration: 'none',
     fontWeight: 'bold',
-    fontSize: '1.1rem',
+    fontSize: '1rem',
     border: '1px solid #5a381e',
     padding: '8px 16px',
     borderRadius: '8px',
-    transition: 'all 0.3s',
+    transition: 'all 0.3s ease-in-out',
+    backgroundColor: '#fff',
   };
 
   return (
     <div>
+      {/* Inline CSS for animation + responsive media query */}
       <style>
         {`
           @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
           }
+
           a:hover {
             background-color: #5a381e;
             color: white !important;
+          }
+
+          @media (max-width: 600px) {
+            div {
+              font-size: 90%;
+            }
+
+            nav a {
+              font-size: 0.9rem !important;
+              padding: 6px 12px !important;
+            }
+
+            h1 {
+              font-size: 1.5rem !important;
+            }
           }
         `}
       </style>
